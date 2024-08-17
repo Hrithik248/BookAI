@@ -1,38 +1,182 @@
-.App {
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --primary-color: #6366f1;
+  --secondary-color: #a5b4fc;
+  --background-color: #0f172a;
+  --text-color: #e2e8f0;
+  --accent-color: #22d3ee;
+  --code-background: #1e293b;
+  --section-background: #1e293b;
+  --border-color: #334155;
+}
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 0;
+}
+header {
+  background-color: var(--primary-color);
+  padding: 2rem 0;
   text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+main {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 2rem;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+nav {
+  background-color: var(--section-background);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav ul {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
-
-.App-link {
-  color: #61dafb;
+nav ul li {
+  margin: 0.5rem 1rem;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+nav ul li a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+nav ul li a:hover {
+  color: var(--accent-color);
+}
+section {
+  background-color: var(--section-background);
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border-color);
+}
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+h2, h3, h4 {
+  margin-top: 2rem;
+  color: var(--secondary-color);
+}
+pre, code {
+  font-family: 'Fira Code', monospace;
+  background-color: var(--code-background);
+  border-radius: 4px;
+  padding: 0.5rem;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-size: 0.9rem;
+  border: 1px solid var(--border-color);
+  line-height: 2;
+}
+button {
+  background-color: var(--accent-color);
+  color: var(--background-color);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 1rem;
+}
+button:hover {
+  background-color: #0ea5e9;
+  transform: translateY(-2px);
+}
+#apiKeyDisplay {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: var(--code-background);
+  border-radius: 4px;
+  font-family: 'Fira Code', monospace;
+  border: 1px solid var(--border-color);
+  word-break: break-all;
+}
+.http-method {
+  background-color: var(--accent-color);
+  color: var(--background-color);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+.endpoint {
+  background-color: var(--primary-color);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 1rem;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+th {
+  background-color: var(--primary-color);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.8rem;
+  color: #ffffff;
+}
+th, td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+.parameter-table td:first-child {
+  font-weight: bold;
+  color: var(--accent-color);
+}
+tr:last-child td {
+  border-bottom: none;
+}
+@media  screen and (max-width:768px) {
+  main{
+    padding: 0 1rem;
   }
-  to {
-    transform: rotate(360deg);
+  nav{
+    position: static;
+  }
+  nav ul{
+    flex-direction: column;
+    align-items: center;
+  }
+  table, th, td {
+    font-size: 0.85rem;
+  }
+  section {
+    padding: 1.5rem;
   }
 }
